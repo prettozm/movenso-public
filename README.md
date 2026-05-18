@@ -7,22 +7,12 @@ L'application elle-même est en bêta. Son code source reste privé pendant cett
 ## Contenu
 
 - [Politique de confidentialité](./privacy-policy.html) — version publique référencée par Google Play et accessible depuis l'application.
-- [Starter packs](./packs/) — paquets ZIP de disciplines, importables depuis l'onglet Médias de l'app (rôle admin).
 
-## Starter packs disponibles
-
-| Discipline | Fichier | Description |
-|---|---|---|
-| Judo | [`packs/judo-2026-05-15.zip`](./packs/judo-2026-05-15.zip) | 49 techniques |
-| Ju-Jitsu | [`packs/jujitsu-2026-05-15.zip`](./packs/jujitsu-2026-05-15.zip) | 61 techniques |
-| JJB | [`packs/jjb-2026-05-15.zip`](./packs/jjb-2026-05-15.zip) | 135 techniques |
-| Karaté | [`packs/karate-2026-05-15.zip`](./packs/karate-2026-05-15.zip) | 46 techniques |
-
-Pour importer : ouvrir l'application, se connecter en admin, onglet **Médias**, **Importer ZIP**.
+Les starter packs (judo, ju-jitsu, jjb, karaté) ne sont pas encore publiés ici : ils seront ajoutés quand leur contenu sera validé pour diffusion publique.
 
 ## Licence
 
-Le contenu de ce dépôt (privacy policy, starter packs, métadonnées) est publié sous licence [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](./LICENSE) (CC BY-NC-SA 4.0).
+Le contenu de ce dépôt (privacy policy, et futurs starter packs lorsqu'ils seront ajoutés) est publié sous licence [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](./LICENSE) (CC BY-NC-SA 4.0).
 
 Cela signifie :
 
