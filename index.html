@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f1720" />
+    <title>Movenso — bibliothèque d'arts martiaux hors ligne</title>
+    <meta
+      name="description"
+      content="Movenso : bibliothèque offline-first de techniques d'arts martiaux. Téléchargez l'application Android ou Windows portable, et des packs de démarrage (judo, ju-jitsu, JJB, karaté)."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f1720;
+        --ink: #f4efe5;
+        --muted: #b9c7ca;
+        --accent: #4f8fa8;
+        --accent-ink: #0f1720;
+        --panel: #14212c;
+        --line: rgb(255 255 255 / 10%);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      /* --- En-tête --- */
+
+      .hero {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 8px;
+      }
+
+      .glyph {
+        flex: none;
+        width: 72px;
+        height: 72px;
+        color: var(--accent);
+      }
+
+      .glyph svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(34px, 6vw, 56px);
+        line-height: 1.1;
+      }
+
+      .lead {
+        margin: 16px 0 0;
+        font-size: 19px;
+        color: var(--ink);
+        max-width: 60ch;
+      }
+
+      .values {
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .values li {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 12px;
+      }
+
+      h2 {
+        margin: 48px 0 4px;
+        color: var(--accent);
+        line-height: 1.2;
+      }
+
+      .section-note {
+        margin: 0 0 20px;
+        color: var(--muted);
+      }
+
+      /* --- Cartes --- */
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--panel);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card h3 {
+        margin: 0 0 4px;
+        font-size: 20px;
+      }
+
+      .card p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .card .spacer {
+        flex: 1;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600;
+        padding: 12px 18px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: var(--accent-ink);
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 11px 18px;
+      }
+
+      .meta {
+        margin-top: 10px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* --- Encadré --- */
+
+      .box {
+        margin: 20px 0 0;
+        padding: 20px 22px;
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--accent);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .box p {
+        color: var(--muted);
+      }
+
+      .box p:first-child {
+        margin-top: 0;
+      }
+
+      .box p:last-child {
+        margin-bottom: 0;
+      }
+
+      .box strong {
+        color: var(--ink);
+      }
+
+      kbd {
+        font-family: inherit;
+        font-size: 0.9em;
+        background: rgb(255 255 255 / 8%);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 1px 6px;
+      }
+
+      /* --- Packs --- */
+
+      .pack {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pack:last-child {
+        border-bottom: none;
+      }
+
+      .pack .name {
+        font-weight: 600;
+      }
+
+      .pack .count {
+        color: var(--muted);
+        font-size: 14px;
+        margin-left: 8px;
+        font-weight: 400;
+      }
+
+      .pack .tag {
+        font-size: 12px;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+        border-radius: 999px;
+        padding: 1px 9px;
+        margin-left: 8px;
+        white-space: nowrap;
+      }
+
+      /* --- Pied de page --- */
+
+      footer {
+        margin-top: 56px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      footer p {
+        max-width: 68ch;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="hero">
+          <span class="glyph" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M282 398 C398 214 662 212 776 372 C800 406 809 439 802 474" stroke="currentColor" stroke-width="88" />
+                <path d="M742 626 C622 810 358 808 246 648 C222 614 214 581 222 546" stroke="currentColor" stroke-width="88" />
+                <path d="M765 388 C798 426 808 466 794 512" stroke="currentColor" stroke-width="34" />
+                <circle cx="512" cy="512" r="24" fill="currentColor" stroke="none" />
+              </g>
+            </svg>
+          </span>
+          <h1>Movenso</h1>
+        </div>
+        <p class="lead">
+          Bibliothèque <strong>hors ligne</strong> de techniques d'arts martiaux, pensée comme un
+          compagnon personnel durable — pour clubs, coachs et pratiquants.
+        </p>
+        <ul class="values">
+          <li>Sans compte</li>
+          <li>Sans cloud obligatoire</li>
+          <li>Sans publicité ni analytics</li>
+          <li>Données sur votre appareil</li>
+        </ul>
+      </header>
+
+      <h2>Télécharger l'application</h2>
+      <p class="section-note">
+        La même application sur Android et sur Windows. Aucune connexion n'est requise pour l'utiliser.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Android</h3>
+          <p>Fichier <code>.apk</code> à installer directement, sans passer par un magasin.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="https://github.com/prettozm/movenso-public/releases/latest/download/movenso-latest.apk">
+            Télécharger l'APK Android
+          </a>
+          <p class="meta">
+            À l'installation, Android demande d'autoriser les « sources inconnues » pour cette
+            fois — c'est normal pour une application distribuée hors magasin.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Windows (portable)</h3>
+          <p>Archive <code>.zip</code> à décompresser. Pas d'installation, pas de droits administrateur.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="https://github.com/prettozm/movenso-public/releases/latest/download/movenso-portable-latest.zip">
+            Télécharger pour Windows
+          </a>
+          <p class="meta">Décompressez l'archive et lancez <code>Movenso.exe</code>.</p>
+        </div>
+      </div>
+      <p class="meta" style="margin-top: 16px">
+        Besoin d'une version précise ?
+        <a href="https://github.com/prettozm/movenso-public/releases">Voir toutes les versions.</a>
+      </p>
+
+      <h2>Un mot pour les utilisateurs PC</h2>
+      <div class="box">
+        <p>
+          La version Windows est <strong>portable</strong> : rien ne s'installe sur le système.
+          Décompressez le <code>.zip</code> où vous voulez (y compris sur une clé USB) et lancez
+          <code>Movenso.exe</code>. Vos données restent dans le dossier de l'application.
+        </p>
+        <p>
+          Movenso n'est pas signé par un éditeur commercial — c'est un
+          <strong>choix assumé</strong> : pas de certificat payant, pas de collecte, pas
+          d'intermédiaire. Au premier lancement, Windows SmartScreen peut donc afficher un
+          avertissement. Cliquez sur <kbd>Informations complémentaires</kbd> puis
+          <kbd>Exécuter quand même</kbd> pour démarrer l'application.
+        </p>
+      </div>
+
+      <h2>Packs de démarrage</h2>
+      <p class="section-note">
+        Des bibliothèques prêtes à l'emploi (291 techniques au total). Une fois l'application
+        ouverte : <kbd>Admin</kbd> › <kbd>Import / Export</kbd>, puis importez le fichier
+        <code>.movpack</code> téléchargé.
+      </p>
+      <div class="card">
+        <div class="pack">
+          <span>
+            <span class="name">Judo</span><span class="count">49 techniques</span
+            ><span class="tag">relations + vidéos</span>
+          </span>
+          <a href="packs/judo-2026-07-02.movpack" download>Télécharger</a>
+        </div>
+        <div class="pack">
+          <span><span class="name">Ju-Jitsu</span><span class="count">61 techniques</span></span>
+          <a href="packs/jujitsu-2026-05-15.movpack" download>Télécharger</a>
+        </div>
+        <div class="pack">
+          <span><span class="name">JJB</span><span class="count">135 techniques</span></span>
+          <a href="packs/jjb-2026-05-15.movpack" download>Télécharger</a>
+        </div>
+        <div class="pack">
+          <span><span class="name">Karaté</span><span class="count">46 techniques</span></span>
+          <a href="packs/karate-2026-05-15.movpack" download>Télécharger</a>
+        </div>
+      </div>
+
+      <h2>Pack de référence</h2>
+      <p class="section-note">
+        Le catalogue officiel du Kodokan : les 100 techniques du Gokyo et du Katame-waza, chacune
+        avec son nom (romaji + kanji), une description, ses points-clés et sa vidéo de démonstration
+        officielle. S'importe comme les autres, à côté de votre discipline.
+      </p>
+      <div class="card">
+        <div class="pack">
+          <span>
+            <span class="name">Judo Kodokan</span><span class="count">100 techniques</span
+            ><span class="tag">catalogue officiel · vidéos</span>
+          </span>
+          <a href="packs/kodokan-2026-07-08.movpack" download>Télécharger</a>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          <a href="privacy-policy.html">Politique de confidentialité</a> · Packs et contenu sous
+          licence <a href="LICENSE">CC BY-NC-SA 4.0</a> (le contenu uniquement ; ni le code, ni le
+          nom Movenso, ni son identité visuelle).
+        </p>
+        <p>
+          Le nom <strong>Movenso</strong> fusionne <em>Mouvement</em> et <em>Ensō</em> (円相), le
+          cercle Zen tracé en un seul geste : capturer une technique en un mouvement complet,
+          ressaisissable et transmissible.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
