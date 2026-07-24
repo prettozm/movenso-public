@@ -7,7 +7,7 @@
     <title>Movenso — bibliothèque d'arts martiaux hors ligne</title>
     <meta
       name="description"
-      content="Movenso : bibliothèque offline-first de techniques d'arts martiaux. Téléchargez l'application Android ou Windows portable, et le pack de techniques Judo Kodokan (100 techniques, nomenclature Kodokan)."
+      content="Movenso : bibliothèque offline-first de techniques d'arts martiaux. Packs de techniques à importer, application Android, et utilisation directe dans un navigateur (PC compris). Sans compte ni cloud."
     />
     <style>
       :root {
@@ -15,8 +15,8 @@
         --bg: #0f1720;
         --ink: #f4efe5;
         --muted: #b9c7ca;
-        --accent: #4f8fa8;
-        --accent-ink: #0f1720;
+        --accent: #e2553a;
+        --accent-ink: #1a0f0b;
         --panel: #14212c;
         --line: rgb(255 255 255 / 10%);
       }
@@ -48,20 +48,14 @@
       .hero {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 18px;
         margin-bottom: 8px;
       }
 
-      .glyph {
+      .logo {
         flex: none;
-        width: 72px;
-        height: 72px;
-        color: var(--accent);
-      }
-
-      .glyph svg {
-        width: 100%;
-        height: 100%;
+        width: 76px;
+        height: 76px;
         display: block;
       }
 
@@ -253,21 +247,13 @@
     <main>
       <header>
         <div class="hero">
-          <span class="glyph" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M282 398 C398 214 662 212 776 372 C800 406 809 439 802 474" stroke="currentColor" stroke-width="88" />
-                <path d="M742 626 C622 810 358 808 246 648 C222 614 214 581 222 546" stroke="currentColor" stroke-width="88" />
-                <path d="M765 388 C798 426 808 466 794 512" stroke="currentColor" stroke-width="34" />
-                <circle cx="512" cy="512" r="24" fill="currentColor" stroke="none" />
-              </g>
-            </svg>
-          </span>
+          <img class="logo" src="movenso-logo.svg" alt="Movenso" width="76" height="76" />
           <h1>Movenso</h1>
         </div>
         <p class="lead">
           Bibliothèque <strong>hors ligne</strong> de techniques d'arts martiaux, pensée comme un
-          compagnon personnel durable — pour clubs, coachs et pratiquants.
+          compagnon personnel durable — pour clubs, coachs et pratiquants. Structurez, consultez,
+          composez vos séances et échangez des packs par simple fichier.
         </p>
         <ul class="values">
           <li>Sans compte</li>
@@ -277,61 +263,11 @@
         </ul>
       </header>
 
-      <h2>Télécharger l'application</h2>
+      <h2>Packs de techniques</h2>
       <p class="section-note">
-        La même application sur Android et sur Windows. Aucune connexion n'est requise pour l'utiliser.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h3>Android</h3>
-          <p>Fichier <code>.apk</code> à installer directement, sans passer par un magasin.</p>
-          <div class="spacer"></div>
-          <a class="btn" href="https://github.com/prettozm/movenso-public/releases/latest/download/movenso-latest.apk">
-            Télécharger l'APK Android
-          </a>
-          <p class="meta">
-            À l'installation, Android demande d'autoriser les « sources inconnues » pour cette
-            fois — c'est normal pour une application distribuée hors magasin.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Windows (portable)</h3>
-          <p>Archive <code>.zip</code> à décompresser. Pas d'installation, pas de droits administrateur.</p>
-          <div class="spacer"></div>
-          <a class="btn" href="https://github.com/prettozm/movenso-public/releases/latest/download/movenso-portable-latest.zip">
-            Télécharger pour Windows
-          </a>
-          <p class="meta">Décompressez l'archive et lancez <code>Movenso.exe</code>.</p>
-        </div>
-      </div>
-      <p class="meta" style="margin-top: 16px">
-        Besoin d'une version précise ?
-        <a href="https://github.com/prettozm/movenso-public/releases">Voir toutes les versions.</a>
-      </p>
-
-      <h2>Un mot pour les utilisateurs PC</h2>
-      <div class="box">
-        <p>
-          La version Windows est <strong>portable</strong> : rien ne s'installe sur le système.
-          Décompressez le <code>.zip</code> où vous voulez (y compris sur une clé USB) et lancez
-          <code>Movenso.exe</code>. Vos données restent dans le dossier de l'application.
-        </p>
-        <p>
-          Movenso n'est pas signé par un éditeur commercial — c'est un
-          <strong>choix assumé</strong> : pas de certificat payant, pas de collecte, pas
-          d'intermédiaire. Au premier lancement, Windows SmartScreen peut donc afficher un
-          avertissement. Cliquez sur <kbd>Informations complémentaires</kbd> puis
-          <kbd>Exécuter quand même</kbd> pour démarrer l'application.
-        </p>
-      </div>
-
-      <h2>Télécharger un pack de techniques</h2>
-      <p class="section-note">
-        Les 100 techniques du Gokyo et du Katame-waza, d'après la nomenclature du Kodokan : chacune
-        avec son nom (romaji + kanji), une description rédigée par Movenso, ses points-clés et un lien
-        vers la vidéo de démonstration officielle du Kodokan. Une fois l'application ouverte :
-        <kbd>Admin</kbd> › <kbd>Import / Export</kbd>, puis importez le fichier <code>.movpack</code> téléchargé.
+        Un pack <code>.movpack</code> s'importe dans Movenso en quelques secondes :
+        <kbd>Plus</kbd> › <kbd>Importer un pack</kbd>, puis choisissez le fichier téléchargé. Les
+        techniques rejoignent votre bibliothèque sans écraser vos propres notes.
       </p>
       <div class="card">
         <div class="pack">
@@ -341,6 +277,74 @@
           </span>
           <a href="packs/kodokan-2026-07-08.movpack" download>Télécharger</a>
         </div>
+      </div>
+      <div class="box">
+        <p>
+          <strong>À propos de ces packs.</strong> Ils sont proposés <strong>à titre d'exemple et de
+          point de départ</strong>, pour illustrer ce que Movenso permet de structurer. Ils
+          <strong>ne constituent pas une référence officielle</strong>, ni un enseignement, ni une
+          norme : les nomenclatures et contenus sont cités <strong>pour information</strong>, sans
+          affiliation ni approbation des écoles, fédérations ou organisations mentionnées.
+        </p>
+        <p>
+          Ils peuvent comporter des <strong>erreurs, simplifications ou choix discutables</strong> et
+          ne remplacent en aucun cas l'enseignement d'un professeur diplômé. À vous de les corriger,
+          compléter ou remplacer par vos propres contenus une fois importés.
+        </p>
+      </div>
+
+      <h2>Installer l'application (Android)</h2>
+      <p class="section-note">
+        Application Android à installer directement, sans passer par un magasin. Aucune connexion
+        n'est requise pour l'utiliser une fois installée.
+      </p>
+      <div class="card">
+        <h3>Android — fichier .apk</h3>
+        <p>Installation directe. Vos données restent sur l'appareil.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="https://github.com/prettozm/movenso-public/releases/latest/download/movenso-latest.apk">
+          Télécharger l'APK Android
+        </a>
+        <p class="meta">
+          À l'installation, Android demande d'autoriser les « sources inconnues » pour cette
+          fois — c'est normal pour une application distribuée hors magasin.
+        </p>
+      </div>
+
+      <h2>Sur ordinateur (PC, Mac, Linux)</h2>
+      <p class="section-note">
+        Pas de logiciel à installer : Movenso <strong>fonctionne directement dans votre
+        navigateur</strong>. Ouvrez-le sur un ordinateur avec un navigateur récent (Chrome, Edge,
+        Firefox), en ligne ou hors ligne une fois chargé.
+      </p>
+      <div class="card">
+        <h3>Ouvrir dans le navigateur</h3>
+        <p>Rien à installer. Vos fiches, vidéos et séances restent stockées dans le navigateur, sur votre machine.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="app/">Ouvrir Movenso dans le navigateur</a>
+        <p class="meta">
+          Astuce : pour une expérience « application », votre navigateur permet souvent
+          d'<em>installer</em> la page (menu ⋮ › « Installer » / « Ajouter à l'écran d'accueil »).
+        </p>
+      </div>
+      <p class="meta" style="margin-top: 16px">
+        Besoin d'une version Android précise ?
+        <a href="https://github.com/prettozm/movenso-public/releases">Voir toutes les versions.</a>
+      </p>
+
+      <h2>Vos données, chez vous</h2>
+      <div class="box">
+        <p>
+          Movenso est <strong>offline-first</strong> : vos fiches, vidéos, séances et réglages vivent
+          dans le stockage privé de l'application (ou du navigateur), <strong>jamais sur un
+          serveur</strong>. Pas de compte, pas de synchronisation obligatoire, pas de collecte.
+        </p>
+        <p>
+          Vous restez propriétaire de votre bibliothèque : une <strong>sauvegarde complète</strong>
+          exportable (fichier <code>.movpack</code>) permet de tout emporter et de tout restaurer sur
+          un autre appareil, sans perte. C'est aussi ainsi que se partagent des packs de techniques,
+          <strong>par simple fichier</strong>.
+        </p>
       </div>
 
       <h2>Avertissement — sécurité et responsabilité</h2>
@@ -369,10 +373,10 @@
           contenu : l'utilisation se fait <strong>sous votre seule responsabilité</strong>.
         </p>
         <p>
-          Les vidéos de démonstration sont la propriété du <strong>Kodokan</strong> (chaîne
-          officielle sur YouTube) : Movenso ne fait que les référencer et ne les héberge pas.
-          <strong>Movenso n'est pas affilié au Kodokan ni approuvé par lui</strong> ; le nom
-          « Kodokan » est cité à titre de référence de nomenclature.
+          Les vidéos de démonstration référencées (par exemple celles du <strong>Kodokan</strong>)
+          restent la propriété de leurs auteurs : Movenso ne fait que les référencer et ne les héberge
+          pas. Movenso <strong>n'est affilié à aucune école ou fédération et n'est approuvé par
+          aucune</strong> ; les noms cités le sont à titre de référence de nomenclature.
         </p>
       </div>
 
