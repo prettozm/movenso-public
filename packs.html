@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Télécharger des starter packs et packs communautaires compatibles avec Movenso.">
+  <title>Packs — Movenso</title>
+  <link rel="icon" href="assets/movenso-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Movenso — accueil">
+      <img src="assets/movenso-mark.svg" alt="">
+      <span>Movenso</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav-links">
+        <li><a href="index.html">Découvrir</a></li>
+<li><a href="application.html">L’application</a></li>
+<li><a href="packs.html" aria-current="page">Packs</a></li>
+<li><a href="ordinateur.html">Sur ordinateur</a></li>
+<li><a href="communaute.html">Communauté</a></li>
+        <li><a class="nav-cta" data-link="web" href="app/">Ouvrir Movenso</a></li>
+      </ul>
+    </nav>
+    <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-button>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" aria-label="Navigation mobile" data-mobile-nav hidden>
+  <ul>
+    <li><a href="index.html">Découvrir</a></li>
+<li><a href="application.html">L’application</a></li>
+<li><a href="packs.html" aria-current="page">Packs</a></li>
+<li><a href="ordinateur.html">Sur ordinateur</a></li>
+<li><a href="communaute.html">Communauté</a></li>
+    <li><a data-link="web" href="app/">Ouvrir Movenso</a></li>
+  </ul>
+</nav>
+<main id="contenu">
+  <section class="catalog-hero">
+    <div class="container">
+      <p class="eyebrow">Catalogue</p>
+      <h1>Choisis un point de départ, pas une vérité imposée.</h1>
+      <p class="lead">Un pack ajoute des techniques ou des compositions à ta bibliothèque. Il reste facultatif, attribué et modifiable après import.</p>
+      <div class="catalog-tools">
+        <div class="field"><label for="pack-search">Rechercher un pack</label><input id="pack-search" type="search" placeholder="Judo, karaté, taïso…"></div>
+        <div class="field"><label for="pack-discipline">Discipline</label><select id="pack-discipline"><option value="">Toutes</option></select></div>
+      </div>
+      <p class="catalog-count" id="pack-count"></p>
+      <div class="pack-list" id="pack-list"></div>
+      <p class="pack-empty" id="pack-empty" hidden>Aucun pack ne correspond à cette recherche.</p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head"><div><p class="eyebrow">Import</p><h2>Un fichier, trois étapes.</h2><p class="lead">Pas de compte, pas de boutique interne et pas de synchronisation à configurer.</p></div></div>
+      <div class="steps">
+        <article class="step"><h3>Télécharge</h3><p>Récupère le fichier <code>.movpack</code> depuis cette page.</p></article>
+        <article class="step"><h3>Importe</h3><p>Dans Movenso, ouvre <strong>Plus → Importer</strong> et sélectionne le fichier.</p></article>
+        <article class="step"><h3>Personnalise</h3><p>Ajoute tes notes, tes vidéos, tes favoris et tes compositions.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta-band">
+      <div>
+        <p class="eyebrow">Packs communautaires</p>
+        <h2>Tu as construit une bibliothèque utile à d’autres pratiquants ?</h2>
+        <p>Le catalogue peut aussi référencer des packs proposés et maintenus par des enseignants, clubs ou pratiquants identifiés.</p>
+      </div>
+      <a class="button button--primary" href="communaute.html">Proposer ou maintenir un pack</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/movenso-mark.svg" alt="">
+      <div>
+        <strong>Movenso</strong>
+        <p>Mouvement + Ensō · Capturer, structurer, transmettre.</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Liens secondaires">
+      <a href="privacy-policy.html">Confidentialité</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="mentions.html">Mentions</a>
+      <a data-link="repository" href="https://github.com/prettozm/movenso-public">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="packs.js"></script>
+<script src="site-config.js"></script>
+<script src="site.js"></script>
+</body></html>

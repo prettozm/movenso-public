@@ -1,51 +1,90 @@
-# Déploiement de la nouvelle page Movenso
+# Déploiement sur GitHub Pages
 
-Ce dossier contient uniquement les fichiers à ajouter ou remplacer à la racine du dépôt `prettozm/movenso-public`.
+## 1. Préserver les contenus existants
 
-## Fichiers remplacés
+Conserver impérativement :
 
-- `index.html`
-- `privacy-policy.html`
+- `app/` — version navigateur de Movenso ;
+- `packs/` — fichiers `.movpack` téléchargeables.
 
-## Fichiers ajoutés
+Copier ensuite le contenu de cette proposition à la racine du dépôt `movenso-public`.
 
-- `styles.css`
-- `site.js`
-- `packs.js`
-- `assets/movenso-mark.svg`
+## 2. Configurer les destinations
 
-## Fichiers et dossiers à conserver dans le dépôt
+Modifier `site-config.js` :
 
-- `app/` : version navigateur actuelle de Movenso
-- `packs/` : fichiers `.movpack`
-- `LICENSE`
-- `.nojekyll`
+```js
+window.MOVENSO_CONFIG = {
+  playStoreUrl: "URL_GOOGLE_PLAY",
+  webAppUrl: "app/",
+  releasesUrl: "https://github.com/prettozm/movenso-public/releases",
+  repositoryUrl: "https://github.com/prettozm/movenso-public",
+  packProposalUrl: "https://github.com/prettozm/movenso-public/issues/new?title=Proposition+de+pack+Movenso",
+  issueUrl: "https://github.com/prettozm/movenso-public/issues/new"
+};
+```
 
-## Ajouter un pack
+Tant que `playStoreUrl` reste vide, les boutons Google Play affichent « Bientôt sur Google Play » et sont désactivés.
+
+## 3. Ajouter un pack
 
 1. Déposer le fichier dans `packs/`.
-2. Ajouter une entrée dans `packs.js`.
-3. Vérifier le lien, la version, la date, le mainteneur et la licence.
+2. Ajouter son illustration dans `assets/` si nécessaire.
+3. Ajouter une entrée dans `packs.js`.
+4. Renseigner l’auteur, la version, la date, la licence et le statut.
 
-Le catalogue se met à jour sans modification de `index.html`.
+Exemple :
 
-## Activer Google Play
-
-Dans `index.html`, remplacer le bloc :
-
-```html
-<span class="button button--primary" aria-disabled="true">Bientôt disponible</span>
+```js
+{
+  id: "karate-shotokan-1",
+  title: "Karaté — Shotokan",
+  discipline: "Karaté",
+  summary: "Pack de démarrage à personnaliser.",
+  type: "community",
+  statusLabel: "Pack communautaire",
+  version: "1.0.0",
+  updatedAt: "25 juillet 2026",
+  itemCount: "40 techniques",
+  language: "Français",
+  maintainer: "Nom du mainteneur",
+  license: "Licence déclarée",
+  features: ["Techniques", "Niveaux"],
+  image: "assets/pack-karate.svg",
+  href: "packs/karate-shotokan-1.movpack",
+  downloadName: "karate-shotokan-1.movpack",
+  note: "Contenu publié sous la responsabilité de son auteur."
+}
 ```
 
-par un lien réel :
+## 4. Publier l’APK alternative
 
-```html
-<a class="button button--primary" href="URL_GOOGLE_PLAY">Installer depuis Google Play</a>
-```
+Google Play reste le canal Android officiel. La copie signée et versionnée peut être jointe à une GitHub Release. Le lien « Télécharger l’APK signée » pointe vers la page des releases, afin d’éviter de figer une URL à chaque version.
 
-## Prévisualiser localement
+Pour chaque release, publier au minimum :
 
-Depuis le dossier :
+- numéro de version ;
+- date ;
+- fichier APK signé ;
+- empreinte SHA-256 ;
+- notes de version ;
+- indication qu’il s’agit de la copie de la version Google Play correspondante.
+
+## 5. Vérifier les pages légales
+
+Avant publication Google Play, compléter dans `privacy-policy.html` et `mentions.html` :
+
+- identité de l’éditeur ;
+- responsable de publication ;
+- adresse de contact ;
+- éventuelles informations d’immatriculation ;
+- politique réellement retenue pour les journaux, diagnostics et services externes.
+
+Ces pages sont des propositions éditoriales, pas une validation juridique.
+
+## 6. Tester localement
+
+Depuis la racine du site :
 
 ```bash
 python -m http.server 8080
@@ -53,4 +92,16 @@ python -m http.server 8080
 
 Puis ouvrir `http://localhost:8080/`.
 
-Les liens vers `app/` et les fichiers de `packs/` fonctionneront uniquement si ces dossiers sont également présents.
+Éviter le simple double-clic sur `index.html` pour la recette de la version navigateur : certaines fonctions web dépendent d’un contexte HTTP ou HTTPS.
+
+## 7. Déployer
+
+Après validation :
+
+```bash
+git add .
+git commit -m "Refonte du portail public Movenso"
+git push
+```
+
+GitHub Pages republiera le site selon la configuration actuelle du dépôt.

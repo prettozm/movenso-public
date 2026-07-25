@@ -3,7 +3,7 @@ window.MOVENSO_PACKS = [
     id: "judo-kodokan-2026-07-08",
     title: "Judo — nomenclature Kodokan",
     discipline: "Judo",
-    summary: "Un point de départ structuré pour construire votre bibliothèque de judo, avec 100 techniques et des liens de démonstration lorsqu'ils sont disponibles.",
+    summary: "Une base structurée pour commencer sa bibliothèque de judo et l'adapter à sa propre pratique.",
     type: "starter",
     statusLabel: "Starter pack Movenso",
     version: "2026.07.08",
@@ -13,7 +13,9 @@ window.MOVENSO_PACKS = [
     maintainer: "Movenso",
     license: "CC BY-NC-SA 4.0",
     features: ["Nomenclature", "Liens vidéo", "Personnalisable"],
+    image: "assets/pack-kodokan.svg",
     href: "packs/kodokan-2026-07-08.movpack",
-    downloadName: "kodokan-2026-07-08.movpack"
+    downloadName: "kodokan-2026-07-08.movpack",
+    note: "Pack de démarrage non officiel. Il ne remplace pas l'enseignement d'un professeur."
   }
 ];

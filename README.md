@@ -1,25 +1,31 @@
-# Movenso — assets publics
+# Proposition de site public Movenso
 
-Ce dépôt héberge les ressources publiques de **Movenso**, une bibliothèque multimédia offline-first de techniques pour clubs, dojos, coachs et pratiquants.
+Cette proposition transforme le site en portail multi-page, avec une séparation claire entre découverte, application, packs, usage sur ordinateur et contribution communautaire.
 
-Le nom Movenso vient de la fusion de *Mouvement* et de *Ensō* (円相), le cercle Zen tracé en un seul geste : capturer une technique en un mouvement complet, ressaisissable et transmissible.
+## Pages principales
 
-L'application elle-même est en bêta. Son code source reste privé pendant cette phase.
+- `index.html` — accueil visuel et compréhension immédiate du produit
+- `application.html` — parcours, fonctions et modes d’accès
+- `packs.html` — catalogue filtrable des starter packs et packs communautaires
+- `ordinateur.html` — version navigateur et perspective d’une version portable
+- `communaute.html` — contribution, maintenance et règles de publication
 
-## Contenu
+## Pages secondaires
 
-- [Politique de confidentialité](./privacy-policy.html) — version publique référencée par Google Play et accessible depuis l'application.
+- `privacy-policy.html` — politique de confidentialité à finaliser avant publication
+- `securite.html` — sécurité de pratique et responsabilité des contenus
+- `mentions.html` — mentions éditoriales à compléter
 
-Les starter packs ne sont pas encore publiés ici : ils seront ajoutés quand leur contenu sera validé pour diffusion publique.
+## Contenu dynamique
 
-## Licence
+- `site-config.js` centralise les liens Google Play, version web, versions APK et GitHub.
+- `packs.js` contient le catalogue. Ajouter un pack consiste à ajouter une entrée dans ce tableau et déposer le fichier correspondant dans `packs/`.
+- `site.js` gère la navigation mobile, la galerie d’images et le rendu du catalogue.
 
-Le contenu de ce dépôt (privacy policy, et futurs starter packs lorsqu'ils seront ajoutés) est publié sous licence [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](./LICENSE) (CC BY-NC-SA 4.0).
+## Visuels
 
-Cela signifie :
+Les captures présentes dans `assets/screens/` ont été générées à partir de l’interface réelle de Movenso avec une bibliothèque de démonstration. Elles sont conçues pour présenter l’usage sans dépendre du contenu définitif des starter packs.
 
-- **Attribution** : créditer Movenso en cas de réutilisation.
-- **NonCommercial** : usage non commercial uniquement.
-- **ShareAlike** : toute adaptation doit être partagée sous la même licence.
+## Important
 
-L'application Movenso elle-même, sa marque et son code source ne sont pas couverts par cette licence et restent réservés.
+Cette archive ne contient pas les dossiers existants `app/` et `packs/`. Elle est conçue pour être déposée à la racine du dépôt public en conservant ces deux dossiers.
