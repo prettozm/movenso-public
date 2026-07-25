@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
-<rect width="900" height="620" rx="42" fill="#f2eee6"/>
-<circle cx="715" cy="120" r="170" fill="#e65a3d" opacity=".12"/>
-<path d="M125 422c102-151 228-210 375-178 101 22 179 89 260 202" fill="none" stroke="#d9d1c5" stroke-width="20" stroke-linecap="round"/>
-<g font-family="system-ui,sans-serif">
-<g transform="translate(120 170)"><circle cx="86" cy="76" r="64" fill="#1e2c34"/><text x="86" y="88" text-anchor="middle" fill="#fff" font-size="34" font-weight="800">A</text><rect x="0" y="155" width="172" height="92" rx="20" fill="#fff" stroke="#ddd4c9"/><text x="86" y="192" text-anchor="middle" fill="#26231f" font-size="22" font-weight="750">Auteur</text><text x="86" y="221" text-anchor="middle" fill="#756f68" font-size="16">crée et attribue</text></g>
-<g transform="translate(365 260)"><circle cx="86" cy="76" r="64" fill="#e1583b"/><text x="86" y="88" text-anchor="middle" fill="#fff" font-size="34" font-weight="800">M</text><rect x="0" y="155" width="172" height="92" rx="20" fill="#fff" stroke="#ddd4c9"/><text x="86" y="192" text-anchor="middle" fill="#26231f" font-size="22" font-weight="750">Mainteneur</text><text x="86" y="221" text-anchor="middle" fill="#756f68" font-size="16">fait évoluer</text></g>
-<g transform="translate(610 160)"><circle cx="86" cy="76" r="64" fill="#759d98"/><text x="86" y="88" text-anchor="middle" fill="#fff" font-size="34" font-weight="800">V</text><rect x="0" y="155" width="172" height="92" rx="20" fill="#fff" stroke="#ddd4c9"/><text x="86" y="192" text-anchor="middle" fill="#26231f" font-size="22" font-weight="750">Movenso</text><text x="86" y="221" text-anchor="middle" fill="#756f68" font-size="16">vérifie le fichier</text></g>
-</g></svg>

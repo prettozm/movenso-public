@@ -3,27 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Movenso aide les pratiquants d’arts martiaux à conserver leurs techniques, leurs notes, leurs vidéos et leurs séances.">
+  <meta name="description" content="Movenso : bibliothèque personnelle d'arts martiaux, hors ligne et sans compte. Application Android, version navigateur, et packs de techniques facultatifs.">
   <meta name="theme-color" content="#f7f4ee">
-  <title>Movenso — Ta mémoire du mouvement</title>
+  <title>Movenso — bibliothèque personnelle d'arts martiaux</title>
   <link rel="icon" href="assets/movenso-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
+
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Movenso — accueil">
-      <img src="assets/movenso-mark.svg" alt="">
-      <span>Movenso</span>
+    <a class="brand" href="#top" aria-label="Movenso — accueil">
+      <img src="assets/movenso-mark.svg" alt=""><span>Movenso</span>
     </a>
     <nav aria-label="Navigation principale">
       <ul class="nav-links">
-        <li><a href="index.html" aria-current="page">Découvrir</a></li>
-<li><a href="application.html">L’application</a></li>
-<li><a href="packs.html">Packs</a></li>
-<li><a href="ordinateur.html">Sur ordinateur</a></li>
-<li><a href="communaute.html">Communauté</a></li>
+        <li><a href="#packs">Packs</a></li>
+        <li><a href="#installer">Installer</a></li>
+        <li><a href="#communaute">Communauté</a></li>
         <li><a class="nav-cta" data-link="web" href="app/">Ouvrir Movenso</a></li>
       </ul>
     </nav>
@@ -34,151 +32,114 @@
 </header>
 <nav class="mobile-nav" aria-label="Navigation mobile" data-mobile-nav hidden>
   <ul>
-    <li><a href="index.html" aria-current="page">Découvrir</a></li>
-<li><a href="application.html">L’application</a></li>
-<li><a href="packs.html">Packs</a></li>
-<li><a href="ordinateur.html">Sur ordinateur</a></li>
-<li><a href="communaute.html">Communauté</a></li>
+    <li><a href="#packs">Packs</a></li>
+    <li><a href="#installer">Installer</a></li>
+    <li><a href="#communaute">Communauté</a></li>
     <li><a data-link="web" href="app/">Ouvrir Movenso</a></li>
   </ul>
 </nav>
+
 <main id="contenu">
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Bibliothèque personnelle d’arts martiaux</p>
-        <h1>Ce que tu apprends au dojo, garde-le à portée de main.</h1>
-        <p class="lead">Movenso rassemble tes techniques, tes notes, tes vidéos et tes séances dans une application simple, sans compte et sans bibliothèque imposée.</p>
-        <div class="button-row">
-          <a class="button button--primary" href="application.html">Découvrir l’application</a>
-          <a class="button button--secondary" href="packs.html">Voir les packs</a>
-        </div>
-        <ul class="trust-list" aria-label="Principes de Movenso">
-          <li>Sans compte</li>
-          <li>Données locales</li>
-          <li>Bibliothèque exportable</li>
-          <li>Packs facultatifs</li>
-        </ul>
+    <div class="container">
+      <p class="eyebrow">Bibliothèque personnelle d'arts martiaux</p>
+      <h1>Ce que tu apprends au dojo, garde-le à portée de main.</h1>
+      <p class="lead">Movenso rassemble tes techniques, tes notes, tes vidéos et tes séances — hors ligne, sans compte, et sans bibliothèque imposée. Tu commences vierge, tu construis la tienne.</p>
+      <div class="button-row">
+        <a class="button button--primary" data-link="web" href="app/">Ouvrir dans le navigateur</a>
+        <a class="button button--secondary" href="#packs">Voir les packs</a>
       </div>
-      <div class="hero-visual" aria-label="Aperçu de la bibliothèque Movenso">
-        <div class="visual-orbit" aria-hidden="true"></div>
-        <div class="phone-frame">
-          <img src="assets/screens/bibliotheque-mobile.png" alt="Bibliothèque Movenso avec plusieurs techniques de judo">
-        </div>
-        <div class="float-card float-card--capture"><strong>Capture rapide</strong><span>Filme ou note pendant que c’est frais.</span></div>
-        <div class="float-card float-card--session"><strong>Séance prête</strong><span>Chronomètre, pauses et annonces.</span></div>
-        <div class="float-card float-card--private"><strong>Chez toi</strong><span>Pas de compte obligatoire.</span></div>
-      </div>
+      <ul class="trust-list">
+        <li>Sans compte</li>
+        <li>Données locales</li>
+        <li>Bibliothèque exportable</li>
+        <li>Packs facultatifs</li>
+      </ul>
     </div>
   </section>
 
   <section class="section section--soft">
     <div class="container">
       <div class="section-head">
-        <div>
-          <p class="eyebrow">Trois gestes, pas un mode d’emploi</p>
-          <h2>Tu l’ouvres, tu retrouves, tu pratiques.</h2>
-          <p class="lead">Movenso suit le rythme d’un pratiquant : capter rapidement, revenir sur une fiche claire, puis assembler ce qu’il veut travailler.</p>
-        </div>
+        <p class="eyebrow">Trois gestes, pas un mode d'emploi</p>
+        <h2>Tu l'ouvres, tu retrouves, tu pratiques.</h2>
       </div>
-      <div class="story-grid">
-        <article class="story-card">
-          <button class="image-button" type="button" data-lightbox data-caption="Capturer une note, une vidéo ou un lien">
-            <div class="story-card__image"><img src="assets/screens/capture-mobile.png" alt="Écran de capture rapide de Movenso"></div>
-          </button>
-          <div class="story-card__body"><span class="story-index">1</span><h3>Garde une trace</h3><p>Une note, une vidéo ou un lien suffit. Tu peux classer immédiatement ou revenir dessus plus tard.</p></div>
-        </article>
-        <article class="story-card">
-          <button class="image-button" type="button" data-lightbox data-caption="Une fiche enrichie par tes propres repères">
-            <div class="story-card__image"><img src="assets/screens/fiche-mobile.png" alt="Fiche O-soto-gari dans Movenso"></div>
-          </button>
-          <div class="story-card__body"><span class="story-index">2</span><h3>Retrouve l’essentiel</h3><p>Nom, description, points clés, commentaire personnel et liens utiles restent réunis dans la même fiche.</p></div>
-        </article>
-        <article class="story-card">
-          <button class="image-button" type="button" data-lightbox data-caption="Une séance construite depuis la bibliothèque">
-            <div class="story-card__image"><img src="assets/screens/composition-detail-mobile.png" alt="Composition d’une séance de judo dans Movenso"></div>
-          </button>
-          <div class="story-card__body"><span class="story-index">3</span><h3>Compose ta pratique</h3><p>Assemble techniques, étapes et pauses, puis déroule la séance avec le chronomètre intégré.</p></div>
-        </article>
+      <div class="grid">
+        <div class="card"><div class="icon">1</div><h3>Garde une trace</h3><p class="muted">Une note, une vidéo ou un lien suffit. Classe tout de suite ou reviens dessus plus tard.</p></div>
+        <div class="card"><div class="icon">2</div><h3>Retrouve l'essentiel</h3><p class="muted">Nom, description, points clés, commentaire perso et liens utiles réunis sur une même fiche.</p></div>
+        <div class="card"><div class="icon">3</div><h3>Compose ta pratique</h3><p class="muted">Assemble techniques, étapes et pauses, puis déroule la séance avec le chronomètre intégré.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container feature-split">
-      <div>
-        <p class="eyebrow">Commencer simplement</p>
-        <h2>Vierge au départ. Personnelle ensuite.</h2>
-        <p class="lead">Movenso n’arrive pas avec une vérité toute faite. Tu peux créer ta première technique en quelques secondes ou importer un pack de démarrage.</p>
-        <ol class="check-list">
-          <li>Installe l’application ou ouvre la version navigateur.</li>
-          <li>Commence vide ou choisis un starter pack.</li>
-          <li>Ajoute tes propres notes, vidéos et compositions.</li>
-        </ol>
-        <div class="button-row">
-          <a class="button button--dark" data-link="web" href="app/">Essayer dans le navigateur</a>
-          <a class="button button--secondary" href="packs.html">Choisir un pack</a>
-        </div>
-      </div>
-      <div class="browser-frame" aria-label="Movenso dans un navigateur sur ordinateur">
-        <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address"></span></div>
-        <img src="assets/screens/bibliotheque-desktop.png" alt="Bibliothèque Movenso affichée sur ordinateur">
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--dark">
+  <section class="section" id="packs">
     <div class="container">
       <div class="section-head">
-        <div>
-          <p class="eyebrow">Starter packs</p>
-          <h2>Un point de départ, jamais une bibliothèque imposée.</h2>
-          <p class="lead">Les packs sont des fichiers facultatifs. Une fois importés, ils deviennent une base que tu peux adapter à ta pratique.</p>
-        </div>
-        <a class="button button--primary" href="packs.html">Parcourir les packs</a>
+        <p class="eyebrow">Catalogue</p>
+        <h2>Des packs pour démarrer, jamais imposés.</h2>
+        <p class="lead">Les packs sont des fichiers facultatifs. Une fois importés, ils deviennent une base que tu adaptes à ta pratique.</p>
+        <p id="pack-count" aria-live="polite"></p>
       </div>
-      <div class="feature-split">
-        <div class="browser-frame"><img src="assets/pack-kodokan.svg" alt="Illustration du starter pack Judo Kodokan"></div>
-        <div>
-          <p class="eyebrow">Disponible au catalogue</p>
-          <h3>Judo — nomenclature Kodokan</h3>
-          <p class="muted">Une première bibliothèque structurée avec les techniques et des liens de démonstration lorsqu’ils sont disponibles.</p>
-          <ul class="check-list">
-            <li>Import en un fichier <code>.movpack</code></li>
-            <li>Contenu modifiable après import</li>
-            <li>Pack non officiel, pensé comme base de travail</li>
-          </ul>
+      <div class="catalog-tools" role="search" aria-label="Rechercher un pack">
+        <div class="field"><label for="pack-search">Rechercher</label><input id="pack-search" type="search" placeholder="Judo, Kodokan, vidéo…" autocomplete="off"></div>
+        <div class="field"><label for="pack-discipline">Discipline</label><select id="pack-discipline"><option value="">Toutes les disciplines</option></select></div>
+      </div>
+      <div id="pack-list"></div>
+      <p id="pack-empty" hidden>Aucun pack ne correspond à cette recherche.</p>
+      <div class="steps" aria-label="Comment importer un pack">
+        <div class="step"><h3>Télécharge</h3><p class="muted">Récupère le fichier <code>.movpack</code> sur ton appareil.</p></div>
+        <div class="step"><h3>Importe</h3><p class="muted">Dans Movenso : <b>Plus</b> › <b>Importer un pack</b>.</p></div>
+        <div class="step"><h3>Personnalise</h3><p class="muted">Ajoute tes notes, tes vidéos et tes propres compositions.</p></div>
+      </div>
+      <p class="muted" style="margin-top:1.2rem;font-size:.9rem">Les starter packs sont des points de départ non officiels : ils ne remplacent pas l'enseignement d'un professeur et n'impliquent aucune affiliation avec les écoles ou fédérations citées.</p>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="installer">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Installer</p>
+        <h2>Le même socle, selon ton appareil.</h2>
+        <p class="lead">Ta bibliothèque reste locale sur chaque installation. Une sauvegarde <code>.movpack</code> permet de la déplacer ou de la restaurer.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">▶</div><p class="eyebrow">Canal officiel</p><h3>Google Play</h3>
+          <p class="muted">Installation, signature et mises à jour depuis le magasin Android.</p>
+          <a class="button button--primary is-disabled" data-link="play" aria-disabled="true"><span data-label>Bientôt sur Google Play</span></a>
+        </div>
+        <div class="card">
+          <div class="icon">PC</div><p class="eyebrow">PC · Mac · Linux</p><h3>Version navigateur</h3>
+          <p class="muted">La même interface, sans rien installer. Les données restent dans le stockage du navigateur.</p>
+          <a class="button button--dark" data-link="web" href="app/">Ouvrir Movenso</a>
+        </div>
+        <div class="card">
+          <div class="icon">APK</div><p class="eyebrow">Installation manuelle</p><h3>Copie Android signée</h3>
+          <p class="muted">Une copie de la version officielle, à installer soi-même.</p>
+          <a class="button button--secondary" data-link="releases" href="https://github.com/prettozm/movenso-public/releases">Voir les versions</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container cta-band">
-      <div>
-        <p class="eyebrow">Un écosystème qui peut grandir</p>
-        <h2>Un club ou un enseignant peut aussi partager son pack.</h2>
-        <p>Movenso peut référencer des packs communautaires tout en laissant leur contenu, leur version et leur licence sous la responsabilité de leurs auteurs.</p>
+  <section class="section" id="communaute">
+    <div class="container container--narrow">
+      <p class="eyebrow">Communauté</p>
+      <h2>Faire évoluer les packs sans centraliser les pratiques.</h2>
+      <p class="lead">Un pack peut être créé par un pratiquant, un enseignant ou un club, puis maintenu collectivement. Movenso héberge le fichier et son historique, pas une vérité pédagogique universelle. Chaque pack garde son auteur, sa version et sa licence.</p>
+      <div class="button-row">
+        <a class="button button--primary" data-link="propose-pack" href="https://github.com/prettozm/movenso-public/issues/new?title=Proposition+de+pack+Movenso">Proposer un pack</a>
+        <a class="button button--secondary" href="securite.html">Sécurité &amp; responsabilité</a>
       </div>
-      <a class="button button--primary" href="communaute.html">Voir le fonctionnement</a>
     </div>
   </section>
 </main>
-<dialog class="image-dialog" id="image-dialog">
-  <div class="dialog-head">
-    <strong data-dialog-caption>Aperçu de Movenso</strong>
-    <button type="button" aria-label="Fermer" data-dialog-close>✕</button>
-  </div>
-  <img src="" alt="">
-</dialog>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src="assets/movenso-mark.svg" alt="">
-      <div>
-        <strong>Movenso</strong>
-        <p>Mouvement + Ensō · Capturer, structurer, transmettre.</p>
-      </div>
+      <div><strong>Movenso</strong><p>Mouvement + Ensō · Capturer, structurer, transmettre.</p></div>
     </div>
     <nav class="footer-links" aria-label="Liens secondaires">
       <a href="privacy-policy.html">Confidentialité</a>
@@ -188,7 +149,9 @@
     </nav>
   </div>
 </footer>
+
 <script src="site-config.js"></script>
+<script src="packs.js"></script>
 <script src="site.js"></script>
 </body>
 </html>

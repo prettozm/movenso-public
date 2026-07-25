@@ -1,8 +1,8 @@
 (() => {
   "use strict";
   const config = window.MOVENSO_CONFIG || {};
-  document.querySelectorAll("[data-year]").forEach((node) => node.textContent = new Date().getFullYear());
 
+  // Menu mobile
   const menuButton = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-mobile-nav]");
   if (menuButton && nav) {
@@ -10,10 +10,13 @@
       const open = menuButton.getAttribute("aria-expanded") === "true";
       menuButton.setAttribute("aria-expanded", String(!open));
       nav.hidden = open;
-      document.body.classList.toggle("menu-open", !open);
+    });
+    nav.addEventListener("click", (e) => {
+      if (e.target.closest("a")) { nav.hidden = true; menuButton.setAttribute("aria-expanded", "false"); }
     });
   }
 
+  // Destinations centralisées (site-config.js)
   const setLink = (selector, url, fallbackLabel) => {
     document.querySelectorAll(selector).forEach((link) => {
       if (url) {
@@ -35,29 +38,7 @@
   setLink("[data-link='propose-pack']", config.packProposalUrl);
   setLink("[data-link='issue']", config.issueUrl);
 
-  const dialog = document.querySelector("#image-dialog");
-  if (dialog) {
-    const image = dialog.querySelector("img");
-    const caption = dialog.querySelector("[data-dialog-caption]");
-    document.querySelectorAll("[data-lightbox]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const source = button.querySelector("img");
-        if (!source) return;
-        image.src = source.currentSrc || source.src;
-        image.alt = source.alt;
-        caption.textContent = button.dataset.caption || source.alt;
-        dialog.showModal();
-      });
-    });
-    dialog.querySelector("[data-dialog-close]")?.addEventListener("click", () => dialog.close());
-    dialog.addEventListener("click", (event) => {
-      const rect = dialog.getBoundingClientRect();
-      const inside = event.clientX >= rect.left && event.clientX <= rect.right &&
-        event.clientY >= rect.top && event.clientY <= rect.bottom;
-      if (!inside) dialog.close();
-    });
-  }
-
+  // Catalogue de packs (texte, sans image)
   const list = document.querySelector("#pack-list");
   if (list) {
     const packs = Array.isArray(window.MOVENSO_PACKS) ? window.MOVENSO_PACKS : [];
@@ -65,54 +46,42 @@
     const discipline = document.querySelector("#pack-discipline");
     const count = document.querySelector("#pack-count");
     const empty = document.querySelector("#pack-empty");
-    const escapeHtml = (value) => String(value ?? "")
+    const esc = (v) => String(v ?? "")
       .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
-    const normalize = (value) => String(value || "").normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const norm = (v) => String(v || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-    [...new Set(packs.map((pack) => pack.discipline).filter(Boolean))].sort().forEach((name) => {
-      const option = document.createElement("option");
-      option.value = name;
-      option.textContent = name;
-      discipline?.append(option);
+    [...new Set(packs.map((p) => p.discipline).filter(Boolean))].sort().forEach((name) => {
+      const opt = document.createElement("option");
+      opt.value = name; opt.textContent = name; discipline?.append(opt);
     });
 
     const render = () => {
-      const query = normalize(search?.value.trim());
+      const query = norm(search?.value.trim());
       const selected = discipline?.value || "";
-      const visible = packs.filter((pack) => {
-        const haystack = normalize([pack.title, pack.discipline, pack.summary, pack.maintainer, ...(pack.features || [])].join(" "));
-        return (!query || haystack.includes(query)) && (!selected || pack.discipline === selected);
+      const visible = packs.filter((p) => {
+        const hay = norm([p.title, p.discipline, p.summary, p.maintainer, ...(p.features || [])].join(" "));
+        return (!query || hay.includes(query)) && (!selected || p.discipline === selected);
       });
-      list.innerHTML = visible.map((pack) => `
+      list.innerHTML = visible.map((p) => `
         <article class="pack-card">
-          <div class="pack-card__visual">
-            <img src="${escapeHtml(pack.image)}" alt="" loading="lazy">
-            <span class="pack-status pack-status--${escapeHtml(pack.type)}">${escapeHtml(pack.statusLabel)}</span>
-          </div>
-          <div class="pack-card__body">
-            <p class="eyebrow">${escapeHtml(pack.discipline)}</p>
-            <h2>${escapeHtml(pack.title)}</h2>
-            <p>${escapeHtml(pack.summary)}</p>
-            <ul class="tag-list">${(pack.features || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
-            <div class="pack-quick">
-              <span><strong>${escapeHtml(pack.itemCount)}</strong></span>
-              <span>v${escapeHtml(pack.version)}</span>
-              <span>${escapeHtml(pack.language)}</span>
-            </div>
-            <div class="pack-actions">
-              <a class="button button--primary" href="${escapeHtml(pack.href)}" download="${escapeHtml(pack.downloadName)}">Télécharger</a>
-              <details class="pack-details">
-                <summary>Détails du pack</summary>
-                <dl>
-                  <div><dt>Maintenu par</dt><dd>${escapeHtml(pack.maintainer)}</dd></div>
-                  <div><dt>Mise à jour</dt><dd>${escapeHtml(pack.updatedAt)}</dd></div>
-                  <div><dt>Licence</dt><dd>${escapeHtml(pack.license)}</dd></div>
-                </dl>
-                <p>${escapeHtml(pack.note)}</p>
-              </details>
-            </div>
+          <span class="pack-status">${esc(p.statusLabel)}</span>
+          <p class="eyebrow">${esc(p.discipline)}</p>
+          <h2>${esc(p.title)}</h2>
+          <p class="muted">${esc(p.summary)}</p>
+          <ul class="tag-list">${(p.features || []).map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
+          <div class="pack-quick"><span><strong>${esc(p.itemCount)}</strong></span><span>v${esc(p.version)}</span><span>${esc(p.language)}</span></div>
+          <div class="pack-actions">
+            <a class="button button--primary" href="${esc(p.href)}" download="${esc(p.downloadName)}">Télécharger</a>
+            <details class="pack-details">
+              <summary>Détails du pack</summary>
+              <dl>
+                <div><dt>Maintenu par</dt><dd>${esc(p.maintainer)}</dd></div>
+                <div><dt>Mise à jour</dt><dd>${esc(p.updatedAt)}</dd></div>
+                <div><dt>Licence</dt><dd>${esc(p.license)}</dd></div>
+              </dl>
+              <p class="muted">${esc(p.note)}</p>
+            </details>
           </div>
         </article>`).join("");
       if (empty) empty.hidden = visible.length > 0;
