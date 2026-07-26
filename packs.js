@@ -1,12 +1,12 @@
 window.MOVENSO_PACKS = [
   {
     id: "judo-kodokan",
-    title: "Judo — référentiel Kodokan",
+    title: "Judo",
     discipline: "Judo",
     summary: "Une base structurée du judo suivant la nomenclature Kodokan, avec des liens de démonstration lorsqu'ils existent.",
     type: "beta",
     statusLabel: "Bêta",
-    version: "0.9.0",
+    version: "0.1.0",
     updatedAt: "25 juillet 2026",
     itemCount: "111 techniques",
     language: "Français",
@@ -15,11 +15,11 @@ window.MOVENSO_PACKS = [
     features: ["Nomenclature", "Liens vidéo", "Personnalisable"],
     href: "packs/judo.movpack",
     downloadName: "judo.movpack",
-    note: "Pack de démarrage. Le judo est le plus avancé (bêta) ; les autres disciplines sont en alpha. Ne remplace pas l'enseignement d'un professeur."
+    note: "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
   },
   {
     id: "karate-shotokan",
-    title: "Karaté — Shotokan",
+    title: "Karaté Shotokan",
     discipline: "Karaté",
     summary: "Point de départ pour structurer une bibliothèque de karaté Shotokan, à compléter et adapter après import.",
     type: "alpha",
@@ -33,11 +33,11 @@ window.MOVENSO_PACKS = [
     features: ["Techniques", "Personnalisable"],
     href: "packs/karate-shotokan.movpack",
     downloadName: "karate-shotokan.movpack",
-    note: "Version alpha : base de travail non officielle, à vérifier et enrichir. Ne remplace pas l'enseignement d'un professeur."
+    note: "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
   },
   {
     id: "jujitsu-france-judo",
-    title: "Jujitsu — France Judo",
+    title: "Jujitsu",
     discipline: "Jujitsu",
     summary: "Une base de jujitsu (nomenclature France Judo) pour démarrer et adapter à sa propre pratique.",
     type: "alpha",
@@ -51,11 +51,11 @@ window.MOVENSO_PACKS = [
     features: ["Techniques", "Personnalisable"],
     href: "packs/jujitsu.movpack",
     downloadName: "jujitsu.movpack",
-    note: "Version alpha : base de travail non officielle, à vérifier et enrichir. Ne remplace pas l'enseignement d'un professeur."
+    note: "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
   },
   {
     id: "jjb-gi-nogi",
-    title: "Jiu-jitsu brésilien — Gi & No-Gi",
+    title: "Jiu-jitsu brésilien",
     discipline: "JJB",
     summary: "Une base de JJB couvrant Gi et No-Gi, comme point de départ personnalisable.",
     type: "alpha",
@@ -69,11 +69,11 @@ window.MOVENSO_PACKS = [
     features: ["Techniques", "Gi & No-Gi"],
     href: "packs/jjb.movpack",
     downloadName: "jjb.movpack",
-    note: "Version alpha : base de travail non officielle, à vérifier et enrichir. Ne remplace pas l'enseignement d'un professeur."
+    note: "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
   },
   {
     id: "taiso",
-    title: "Taïso — préparation du corps",
+    title: "Taïso",
     discipline: "Taïso",
     summary: "Mouvements de taïso et 12 séances prêtes à dérouler avec le chronomètre intégré.",
     type: "alpha",
@@ -87,11 +87,11 @@ window.MOVENSO_PACKS = [
     features: ["Techniques", "12 séances", "Chrono"],
     href: "packs/taiso.movpack",
     downloadName: "taiso.movpack",
-    note: "Version alpha : les 12 séances sont incluses dans ce même pack. Base de travail non officielle, à adapter."
+    note: "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les 12 séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
   },
   {
     id: "yoga-hatha",
-    title: "Yoga — Hatha accessible",
+    title: "Yoga Hatha",
     discipline: "Yoga",
     summary: "Postures de Hatha yoga accessibles et 12 séances prêtes à suivre, incluses dans le pack.",
     type: "alpha",
@@ -105,6 +105,6 @@ window.MOVENSO_PACKS = [
     features: ["Postures", "12 séances", "Chrono"],
     href: "packs/yoga.movpack",
     downloadName: "yoga.movpack",
-    note: "Version alpha : les 12 séances sont incluses dans ce même pack. Base de travail non officielle, à adapter."
+    note: "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les 12 séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
   }
 ];
