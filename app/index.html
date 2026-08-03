@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <!-- CSP stricte (contrat §8) : scripts locaux uniquement ; réseau limité aux
-       vignettes et embeds YouTube explicites ; médias locaux via blob (OPFS). -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://img.youtube.com; media-src 'self' blob: https:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'">
+       vignettes et embeds YouTube explicites, médias locaux via blob (OPFS),
+       et connect-src ouvert vers le SEUL site public — les Packs officiels
+       (catalogue + téléchargement) doivent rester joignables depuis l'APK,
+       où l'app n'est pas servie par le site (D-219). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://img.youtube.com; media-src 'self' blob: https:; frame-src https://www.youtube-nocookie.com; connect-src 'self' https://prettozm.github.io; object-src 'none'; base-uri 'self'">
   <title>Movenso</title>
   <link rel="icon" href="./movenso-mark.svg" type="image/svg+xml">
-  <script type="module" crossorigin src="./assets/index-Cg0wcA3W.js"></script>
+  <script type="module" crossorigin src="./assets/index-Fyx4EBbF.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-asOc_AsL.css">
 </head>
 <body>
