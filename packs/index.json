@@ -1,0 +1,56 @@
+[
+ {
+  "id": "judo-kodokan",
+  "title": "Judo",
+  "version": "0.5.0",
+  "itemCount": "111 techniques · 315 liens expliqués",
+  "summary": "Une base structurée du judo suivant la nomenclature Kodokan, avec une navigation relationnelle bêta : chaque lien (enchaînements, contres, variantes, « à ne pas",
+  "href": "packs/judo.movpack",
+  "downloadName": "judo.movpack"
+ },
+ {
+  "id": "karate-shotokan",
+  "title": "Karaté Shotokan",
+  "version": "0.1.0",
+  "itemCount": "109 techniques",
+  "summary": "Point de départ pour structurer une bibliothèque de karaté Shotokan, à compléter et adapter après import.",
+  "href": "packs/karate-shotokan.movpack",
+  "downloadName": "karate-shotokan.movpack"
+ },
+ {
+  "id": "jujitsu-france-judo",
+  "title": "Jujitsu",
+  "version": "0.1.0",
+  "itemCount": "162 techniques",
+  "summary": "Une base de jujitsu (nomenclature France Judo) pour démarrer et adapter à sa propre pratique.",
+  "href": "packs/jujitsu.movpack",
+  "downloadName": "jujitsu.movpack"
+ },
+ {
+  "id": "jjb-gi-nogi",
+  "title": "Jiu-jitsu brésilien",
+  "version": "0.1.0",
+  "itemCount": "150 techniques",
+  "summary": "Une base de JJB couvrant Gi et No-Gi, comme point de départ personnalisable.",
+  "href": "packs/jjb.movpack",
+  "downloadName": "jjb.movpack"
+ },
+ {
+  "id": "taiso",
+  "title": "Taïso",
+  "version": "0.1.0",
+  "itemCount": "114 techniques · 12 séances",
+  "summary": "Mouvements de taïso et 12 séances prêtes à dérouler avec le chronomètre intégré.",
+  "href": "packs/taiso.movpack",
+  "downloadName": "taiso.movpack"
+ },
+ {
+  "id": "yoga-hatha",
+  "title": "Yoga Hatha",
+  "version": "0.1.0",
+  "itemCount": "72 postures · 12 séances",
+  "summary": "Postures de Hatha yoga accessibles et 12 séances prêtes à suivre, incluses dans le pack.",
+  "href": "packs/yoga.movpack",
+  "downloadName": "yoga.movpack"
+ }
+]
