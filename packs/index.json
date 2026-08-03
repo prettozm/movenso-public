@@ -2,8 +2,8 @@
  {
   "id": "judo-kodokan",
   "title": "Judo",
-  "version": "0.5.0",
-  "itemCount": "111 techniques · 315 liens expliqués",
+  "version": "0.6.0",
+  "itemCount": "111 techniques · 315 liens expliqués · niveaux de ceinture",
   "summary": "Une base structurée du judo suivant la nomenclature Kodokan, avec une navigation relationnelle bêta : chaque lien (enchaînements, contres, variantes, « à ne pas",
   "href": "packs/judo.movpack",
   "downloadName": "judo.movpack"
@@ -22,7 +22,7 @@
   "title": "Jujitsu",
   "version": "0.1.0",
   "itemCount": "162 techniques",
-  "summary": "Une base de jujitsu (nomenclature France Judo) pour démarrer et adapter à sa propre pratique.",
+  "summary": "Une base de jujitsu pour démarrer et adapter à sa propre pratique.",
   "href": "packs/jujitsu.movpack",
   "downloadName": "jujitsu.movpack"
  },
