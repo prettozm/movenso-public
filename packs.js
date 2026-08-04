@@ -96,7 +96,7 @@ window.MOVENSO_PACKS = [
     summary: "Postures de Hatha yoga accessibles et 12 séances prêtes à suivre, incluses dans le pack.",
     type: "alpha",
     statusLabel: "Alpha",
-    version: "0.2.0",
+    version: "0.3.0",
     updatedAt: "4 août 2026",
     itemCount: "72 postures illustrées · 12 séances",
     language: "Français",
