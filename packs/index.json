@@ -11,8 +11,8 @@
  {
   "id": "karate-shotokan",
   "title": "Karaté Shotokan",
-  "version": "0.1.0",
-  "itemCount": "109 techniques",
+  "version": "0.2.0",
+  "itemCount": "109 techniques illustrées",
   "summary": "Point de départ pour structurer une bibliothèque de karaté Shotokan, à compléter et adapter après import.",
   "href": "packs/karate-shotokan.movpack",
   "downloadName": "karate-shotokan.movpack"
