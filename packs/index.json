@@ -29,9 +29,9 @@
  {
   "id": "jjb-gi-nogi",
   "title": "Jiu-jitsu brésilien",
-  "version": "0.1.0",
-  "itemCount": "150 techniques",
-  "summary": "Une base de JJB couvrant Gi et No-Gi, comme point de départ personnalisable.",
+  "version": "0.2.0",
+  "itemCount": "150 techniques illustrées · 97 liens expliqués · 14 séances",
+  "summary": "Une base de JJB couvrant Gi et No-Gi, illustrée par famille, avec quatorze séances prêtes à dérouler — de la garde fermée à la prise de dos et au système de jambes.",
   "href": "packs/jjb.movpack",
   "downloadName": "jjb.movpack"
  },
