@@ -20,8 +20,8 @@
  {
   "id": "jujitsu-france-judo",
   "title": "Jujitsu",
-  "version": "0.2.0",
-  "itemCount": "162 techniques · 54 liens expliqués · Goshin-jutsu en 4 compositions",
+  "version": "0.3.0",
+  "itemCount": "162 techniques illustrées · 54 liens expliqués · Goshin-jutsu en 4 compositions",
   "summary": "Une base de jujitsu pour démarrer et adapter à sa propre pratique, avec le Goshin-jutsu déroulé en compositions jouables — dont deux versions détaillées, geste par geste, en deux rôles.",
   "href": "packs/jujitsu.movpack",
   "downloadName": "jujitsu.movpack"
