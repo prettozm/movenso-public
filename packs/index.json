@@ -38,9 +38,9 @@
  {
   "id": "taiso",
   "title": "Taïso",
-  "version": "0.1.0",
-  "itemCount": "114 techniques · 12 séances",
-  "summary": "Mouvements de taïso et 12 séances prêtes à dérouler avec le chronomètre intégré.",
+  "version": "0.2.0",
+  "itemCount": "114 techniques illustrées · 48 liens · 16 séances minutées",
+  "summary": "Mouvements de taïso illustrés un par un et seize séances entièrement minutées, de 20 à 46 minutes, prêtes à dérouler avec le chronomètre intégré — de la reprise en douceur au circuit soutenu.",
   "href": "packs/taiso.movpack",
   "downloadName": "taiso.movpack"
  },
