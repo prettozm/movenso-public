@@ -11,9 +11,9 @@
  {
   "id": "karate-shotokan",
   "title": "Karaté Shotokan",
-  "version": "0.2.0",
-  "itemCount": "109 techniques illustrées",
-  "summary": "Point de départ pour structurer une bibliothèque de karaté Shotokan, à compléter et adapter après import.",
+  "version": "0.3.0",
+  "itemCount": "109 techniques illustrées · 39 liens expliqués · 14 séances et katas",
+  "summary": "Une base de karaté Shotokan illustrée technique par technique, avec les six séries de kihon, la progression kumite et les programmes de kata du 1er au 5e Dan prêts à dérouler.",
   "href": "packs/karate-shotokan.movpack",
   "downloadName": "karate-shotokan.movpack"
  },
