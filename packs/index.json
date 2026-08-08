@@ -2,9 +2,9 @@
  {
   "id": "judo-kodokan",
   "title": "Judo",
-  "version": "0.6.1",
-  "itemCount": "111 techniques · 315 liens expliqués · 1 kata en composition",
-  "summary": "Une base structurée du judo suivant la nomenclature Kodokan, avec une navigation relationnelle bêta : chaque lien (enchaînements, contres, variantes, « à ne pas confondre », liaisons debout-sol, katas) est expliqué par une courte raison, et les techniques interdites en compétition IJF sont signalées.",
+  "version": "0.7.0",
+  "itemCount": "111 techniques · 67 liens expliqués · Nage-no-kata en 6 compositions",
+  "summary": "Une base structurée du judo suivant la nomenclature Kodokan. Les liens entre techniques (contres, katas, « à ne pas confondre », variantes) ont été resserrés sur ce qui est techniquement sûr, chacun expliqué par une courte raison ; les techniques interdites en compétition IJF sont signalées, et le Nage-no-kata est déroulé en compositions jouables.",
   "href": "packs/judo.movpack",
   "downloadName": "judo.movpack"
  },
