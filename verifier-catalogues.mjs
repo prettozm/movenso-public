@@ -67,6 +67,27 @@ for (const f of (await readdir(join(ICI, "packs"))).filter((f) => f.endsWith(".m
   if (!annonces.has(f)) ecarts.push(`packs/${f} est publié mais n'apparaît dans aucune entrée du catalogue`);
 }
 
+// La SOURCE correspondante doit accompagner le binaire (S4.7/D-265). Le site
+// distribue une application sous GPLv3 : le droit d'étudier et de modifier n'a
+// de sens que si la source du binaire SERVI est là. `app/source/COMMIT` dit
+// quel commit est déployé ; l'archive qui porte ce commit doit exister.
+try {
+  await access(join(ICI, "app"));
+  let commit = null;
+  try {
+    commit = (await readFile(join(ICI, "app", "source", "COMMIT"), "utf8")).trim();
+  } catch {
+    ecarts.push("app/ est publié mais app/source/COMMIT est absent — impossible de dire quelle source correspond au binaire servi (GPLv3, S4.7)");
+  }
+  if (commit) {
+    try {
+      await access(join(ICI, "app", "source", `movenso-source-${commit}.tar.gz`));
+    } catch {
+      ecarts.push(`app/source/COMMIT annonce « ${commit} » mais movenso-source-${commit}.tar.gz est absent — la source annoncée n'est pas là`);
+    }
+  }
+} catch { /* pas d'app déployée ici : rien à accompagner */ }
+
 if (ecarts.length) {
   console.error(`verifier-catalogues : ${ecarts.length} écart(s)\n`);
   for (const e of ecarts) console.error(`  ✕ ${e}`);

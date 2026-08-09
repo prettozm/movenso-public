@@ -5,6 +5,23 @@
 3. Renseigner l’URL Google Play dans `site-config.js` lorsque la fiche sera publiée.
 4. Vérifier le catalogue : `node verifier-catalogues.mjs` (voir « Publier un pack »).
 
+## Publier l'application
+
+Le site distribue une application sous **GPL v3** : sa **source correspondante**
+doit l'accompagner, sinon la licence n'est pas respectée. Déployer `app/`, c'est
+donc déposer deux choses :
+
+1. le build (`dist/` de l'artefact CI du commit) dans `app/` ;
+2. la source de **ce commit précis** :
+
+```
+node tools/source-du-build.mjs --vers ../movenso-public
+```
+
+Le fichier porte le SHA que l'application affiche dans **Plus › À propos** :
+n'importe qui peut ainsi vérifier que la source proposée est celle du binaire
+servi. `verifier-catalogues.mjs` refuse un `app/` publié sans sa source.
+
 ## Publier un pack
 
 Il n'existe **qu'un seul catalogue** : `packs/index.json`. La page web
