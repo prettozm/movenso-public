@@ -3,21 +3,28 @@
 1. Copier les fichiers à la racine de `movenso-public`.
 2. Conserver les dossiers existants `app/` et `packs/`.
 3. Renseigner l’URL Google Play dans `site-config.js` lorsque la fiche sera publiée.
-4. Vérifier que le fichier du starter pack indiqué dans `packs.js` existe.
+4. Vérifier le catalogue : `node verifier-catalogues.mjs` (voir « Publier un pack »).
 
 ## Publier un pack
 
-Un pack est décrit à **deux** endroits, qui doivent rester d'accord :
+Il n'existe **qu'un seul catalogue** : `packs/index.json`. La page web
+(`packs.html`) et l'application (« Packs officiels ») le lisent toutes les
+deux. Publier un pack, c'est donc :
 
-- `packs.js` — catalogue de la **page web** (`packs.html`) ;
-- `packs/index.json` — catalogue lu par l'**application** (« Packs officiels »).
-
-Mettre à jour les deux (`version`, `itemCount`, `summary`), puis contrôler :
+1. déposer le `.movpack` dans `packs/` ;
+2. mettre à jour son entrée dans `packs/index.json` (`version`, `updatedAt`,
+   `itemCount`, `summary`) ;
+3. contrôler :
 
 ```
 node verifier-catalogues.mjs
 ```
 
-Le 8 août 2026, cinq packs n'ont été publiés que dans `index.json` : la page
-web a continué d'annoncer les anciennes versions tout en distribuant les
-nouvelles. C'est ce que cette garde empêche de refaire silencieusement.
+La garde vérifie les champs requis, l'unicité des ids, qu'aucun fichier
+annoncé ne manque, qu'aucun fichier publié n'est oublié — et qu'aucune
+**seconde liste** n'est réapparue.
+
+Historique : jusqu'au 2026-08-09 il y avait deux listes, `packs.js` pour la
+page et `packs/index.json` pour l'app. Cinq packs n'ont été publiés que dans
+la seconde : la page a continué d'annoncer les anciennes versions tout en
+distribuant les nouvelles. Les deux listes n'en font plus qu'une.
