@@ -1,0 +1,20 @@
+# Les deux catalogues de packs (packs.js pour la page web, packs/index.json
+# pour l'application) décrivent les mêmes fichiers. Ils ont divergé une fois
+# sans que rien ne le signale (D-250) : cette garde le dit désormais à chaque
+# poussée. Aucune dépendance, aucun secret — juste Node et deux fichiers.
+name: catalogues
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node verifier-catalogues.mjs
