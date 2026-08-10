@@ -22,8 +22,11 @@ donc déposer deux choses :
 2. la source de **ce commit précis**, depuis `movenso` :
 
 ```
-npm run source -- --vers ../movenso-public
+npm run deposer -- --vers ../movenso-public
 ```
+
+Ce geste dépose **application, packs et source ensemble** (D-267), rejoue
+`verifier:release` **avant**, et la garde du site **après**.
 
 La commande dépose l'archive `app/source/movenso-source-<sha>.tar.gz` et écrit
 la **carte d'identité du déploiement**, `app/build.json` : version, commit,
@@ -44,7 +47,9 @@ construit les conteneurs, les **relit**, et en dérive les compteurs et le
 catalogue :
 
 ```
-npm run publier -- --vers ../movenso-public
+npm run publier                          # produit dans dist-publication/
+npm run verifier:release                 # tout est-il cohérent ?
+npm run deposer -- --vers ../movenso-public   # le seul geste qui écrit ici
 ```
 
 ## Ce que la garde refuse
