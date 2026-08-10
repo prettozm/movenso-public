@@ -1,9 +1,16 @@
 # Déploiement
 
-1. Copier les fichiers à la racine de `movenso-public`.
-2. Conserver les dossiers existants `app/` et `packs/`.
-3. Renseigner l’URL Google Play dans `site-config.js` lorsque la fiche sera publiée.
-4. Vérifier le catalogue : `node verifier-catalogues.mjs` (voir « Publier un pack »).
+Ce dépôt est une **destination** : on n'y développe pas, on y dépose un build
+déjà vérifié. Les conditions de publication (quand on va direct sur `main`,
+quand on passe par une PR) vivent dans `CLAUDE.md` du dépôt `movenso`,
+section « Deux dépôts, deux régimes » — un seul lieu, pas deux. Ce fichier-ci
+ne dit que les **gestes**.
+
+Le contrôle, dans tous les cas, est le même et se passe **après** dépôt :
+
+```
+node verifier-catalogues.mjs
+```
 
 ## Publier l'application
 
@@ -12,34 +19,44 @@ doit l'accompagner, sinon la licence n'est pas respectée. Déployer `app/`, c'e
 donc déposer deux choses :
 
 1. le build (`dist/` de l'artefact CI du commit) dans `app/` ;
-2. la source de **ce commit précis** :
+2. la source de **ce commit précis**, depuis `movenso` :
 
 ```
-node tools/source-du-build.mjs --vers ../movenso-public
+npm run source -- --vers ../movenso-public
 ```
 
-Le fichier porte le SHA que l'application affiche dans **Plus › À propos** :
+La commande dépose l'archive `app/source/movenso-source-<sha>.tar.gz` et écrit
+la **carte d'identité du déploiement**, `app/build.json` : version, commit,
+`versionSchema`, `versionMovpack`, nom de l'archive. Elle **refuse un dépôt
+sale** — une source qui ne correspond à aucun commit n'est pas une source
+correspondante.
+
+Le SHA est celui que l'application affiche dans **Plus › À propos** :
 n'importe qui peut ainsi vérifier que la source proposée est celle du binaire
-servi. `verifier-catalogues.mjs` refuse un `app/` publié sans sa source.
+servi.
 
 ## Publier un pack
 
 Il n'existe **qu'un seul catalogue** : `packs/index.json`. La page web
 (`packs.html`) et l'application (« Packs officiels ») le lisent toutes les
-deux. Publier un pack, c'est donc :
-
-1. déposer le `.movpack` dans `packs/` ;
-2. mettre à jour son entrée dans `packs/index.json` (`version`, `updatedAt`,
-   `itemCount`, `summary`) ;
-3. contrôler :
+deux. Il n'est **pas écrit à la main** : la chaîne de publication de `movenso`
+construit les conteneurs, les **relit**, et en dérive les compteurs et le
+catalogue :
 
 ```
-node verifier-catalogues.mjs
+npm run publier -- --vers ../movenso-public
 ```
 
-La garde vérifie les champs requis, l'unicité des ids, qu'aucun fichier
-annoncé ne manque, qu'aucun fichier publié n'est oublié — et qu'aucune
-**seconde liste** n'est réapparue.
+## Ce que la garde refuse
+
+- un champ requis manquant, un id en double ;
+- un fichier annoncé absent — ou un `.movpack` publié que personne n'annonce ;
+- le retour d'une **seconde liste** (`packs.js`) ;
+- un `app/` publié sans `build.json`, ou dont la source annoncée est absente ;
+- **un pack en schéma N+1 devant une application restée en schéma N.** C'est le
+  seul écart qui casse le produit pour de vrai : l'application refuserait les
+  packs qu'elle propose elle-même. Déployer l'application **avant ou avec** les
+  packs, jamais après.
 
 Historique : jusqu'au 2026-08-09 il y avait deux listes, `packs.js` pour la
 page et `packs/index.json` pour l'app. Cinq packs n'ont été publiés que dans

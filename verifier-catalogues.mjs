@@ -67,23 +67,62 @@ for (const f of (await readdir(join(ICI, "packs"))).filter((f) => f.endsWith(".m
   if (!annonces.has(f)) ecarts.push(`packs/${f} est publié mais n'apparaît dans aucune entrée du catalogue`);
 }
 
-// La SOURCE correspondante doit accompagner le binaire (S4.7/D-265). Le site
-// distribue une application sous GPLv3 : le droit d'étudier et de modifier n'a
-// de sens que si la source du binaire SERVI est là. `app/source/COMMIT` dit
-// quel commit est déployé ; l'archive qui porte ce commit doit exister.
+// CARTE D'IDENTITÉ DU DÉPLOIEMENT : `app/build.json` (D-265 → D-267).
+//
+// Le site distribue une application sous GPLv3 : le droit d'étudier et de
+// modifier n'a de sens que si la source du binaire SERVI est là. Et il
+// distribue des packs : encore faut-il que l'app déployée sache les lire.
+// `build.json` dit les deux — quel commit, quelle source, quel schéma — et
+// c'est ce qui permet de refuser une publication à moitié faite.
 try {
   await access(join(ICI, "app"));
-  let commit = null;
+  let build = null;
   try {
-    commit = (await readFile(join(ICI, "app", "source", "COMMIT"), "utf8")).trim();
+    build = JSON.parse(await readFile(join(ICI, "app", "build.json"), "utf8"));
   } catch {
-    ecarts.push("app/ est publié mais app/source/COMMIT est absent — impossible de dire quelle source correspond au binaire servi (GPLv3, S4.7)");
+    ecarts.push("app/ est publié mais app/build.json est absent — on ne peut dire ni quelle source correspond au binaire servi (GPLv3), ni quel schéma il sait lire (D-267)");
   }
-  if (commit) {
+  if (build) {
+    // 1. La source correspondante existe bel et bien.
     try {
-      await access(join(ICI, "app", "source", `movenso-source-${commit}.tar.gz`));
+      await access(join(ICI, "app", build.source));
     } catch {
-      ecarts.push(`app/source/COMMIT annonce « ${commit} » mais movenso-source-${commit}.tar.gz est absent — la source annoncée n'est pas là`);
+      ecarts.push(`app/build.json annonce « ${build.source} » mais le fichier est absent — la source annoncée n'est pas là`);
+    }
+    // 2. Le BINAIRE DÉPLOYÉ dit le même commit que sa carte d'identité.
+    //    Sans ce contrôle, `build.json` ne prouve rien : on peut déposer la
+    //    source du commit N à côté du build du commit N-1 — c'est arrivé, le
+    //    build de `app/` embarquant un SHA de la veille pendant que l'archive
+    //    portait celui du jour. Le SHA est injecté au build (`__APP_COMMIT__`)
+    //    et c'est celui que l'app affiche dans Plus › À propos : il suffit de
+    //    le chercher dans les fichiers servis.
+    let annonce = false;
+    try {
+      for (const f of await readdir(join(ICI, "app", "assets"))) {
+        if (!f.endsWith(".js")) continue;
+        if ((await readFile(join(ICI, "app", "assets", f), "utf8")).includes(build.commit)) { annonce = true; break; }
+      }
+    } catch { /* pas d'assets : le premier contrôle l'aura déjà dit */ }
+    if (!annonce) {
+      ecarts.push(
+        `app/build.json annonce le commit ${build.commit} mais aucun fichier servi ne le porte`
+        + ` — le build déployé vient d'un AUTRE commit que la source publiée (GPLv3). Rebâtir avant de déposer.`,
+      );
+    }
+
+    // 3. L'app SAIT LIRE les packs qu'on publie devant elle. Publier des packs
+    //    en schéma N+1 devant une app restée en schéma N rend le catalogue
+    //    inutilisable : l'app refuse les packs qu'elle propose. C'est le seul
+    //    écart de cette liste qui casse le produit pour de vrai.
+    for (const p of catalogue) {
+      if (typeof p?.versionSchema !== "number") {
+        ecarts.push(`${p?.id} : le catalogue ne dit pas le schéma du pack — impossible de vérifier que l'app sait le lire (D-267)`);
+      } else if (p.versionSchema > build.versionSchema) {
+        ecarts.push(
+          `${p.id} est en schéma ${p.versionSchema} alors que l'app publiée lit le schéma ${build.versionSchema}`
+          + ` — elle REFUSERAIT ce pack. Déployer l'application AVANT ou AVEC les packs, jamais après.`,
+        );
+      }
     }
   }
 } catch { /* pas d'app déployée ici : rien à accompagner */ }
