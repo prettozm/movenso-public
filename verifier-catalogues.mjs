@@ -83,6 +83,19 @@ try {
     ecarts.push("app/ est publié mais app/build.json est absent — on ne peut dire ni quelle source correspond au binaire servi (GPLv3), ni quel schéma il sait lire (D-267)");
   }
   if (build) {
+    // 0. La carte d'identité est LISIBLE. `versionMovpack: null` est passé
+    //    ici sans un mot (D-285) : la constante avait déménagé dans le dépôt
+    //    de travail (D-274), l'outil de dépôt écrivait `Number(undefined)` →
+    //    null, et cette garde vérifiait tout — sauf la valeur. Une carte
+    //    illisible ne prouve rien : elle se refuse, elle ne s'interprète pas.
+    for (const champ of ["versionSchema", "versionMovpack"]) {
+      if (!Number.isInteger(build[champ]) || build[champ] < 1) {
+        ecarts.push(
+          `app/build.json : ${champ} vaut ${JSON.stringify(build[champ])} — carte d'identité illisible,`
+          + ` rien ne dit plus ce que l'app déployée sait lire (D-285). Rebâtir et redéposer.`,
+        );
+      }
+    }
     // 1. La source correspondante existe bel et bien.
     try {
       await access(join(ICI, "app", build.source));
