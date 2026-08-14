@@ -13,8 +13,12 @@ jobs:
   verifier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Épinglées par SHA comme dans le dépôt principal (audit 2026-08-13, P2-3) :
+      # un tag est mutable, un SHA ne l'est pas. Ce workflow ne manipule aucun
+      # secret, mais deux postures différentes dans un même projet n'ont pas de
+      # raison de coexister — et c'est la moins bonne qu'on finit par copier.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
       - run: node verifier-catalogues.mjs
