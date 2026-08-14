@@ -7,8 +7,8 @@
   "type": "beta",
   "statusLabel": "Bêta",
   "version": "0.7.6",
-  "updatedAt": "13 août 2026",
-  "itemCount": "111 techniques illustrées · 67 liens expliqués · 6 compositions",
+  "updatedAt": "14 août 2026",
+  "itemCount": "111 techniques · 10 familles illustrées · 67 liens expliqués · 6 compositions",
   "versionSchema": 6,
   "language": "Français",
   "maintainer": "Movenso",
@@ -21,7 +21,10 @@
   ],
   "href": "packs/judo.movpack",
   "downloadName": "judo.movpack",
-  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
+  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
+  "icon": "packs/img/judo-kodokan.webp",
+  "packId": "pack-01KX9CT5W7HQ9YVG00MA9M4C8G",
+  "versionEditoriale": 14
  },
  {
   "id": "karate-shotokan",
@@ -31,7 +34,7 @@
   "type": "alpha",
   "statusLabel": "Alpha",
   "version": "0.3.2",
-  "updatedAt": "13 août 2026",
+  "updatedAt": "14 août 2026",
   "itemCount": "109 techniques illustrées · 39 liens expliqués · 14 compositions",
   "versionSchema": 6,
   "language": "Français",
@@ -45,7 +48,10 @@
   ],
   "href": "packs/karate-shotokan.movpack",
   "downloadName": "karate-shotokan.movpack",
-  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
+  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
+  "icon": "packs/img/karate-shotokan.webp",
+  "packId": "pack-01KY8DX4EZBYNZE34J6DVXBW36",
+  "versionEditoriale": 6
  },
  {
   "id": "jujitsu-france-judo",
@@ -55,8 +61,8 @@
   "type": "alpha",
   "statusLabel": "Alpha",
   "version": "0.3.4",
-  "updatedAt": "13 août 2026",
-  "itemCount": "162 techniques illustrées · 54 liens expliqués · 4 compositions",
+  "updatedAt": "14 août 2026",
+  "itemCount": "162 techniques · 16 familles illustrées · 54 liens expliqués · 4 compositions",
   "versionSchema": 6,
   "language": "Français",
   "maintainer": "Movenso",
@@ -69,7 +75,10 @@
   ],
   "href": "packs/jujitsu.movpack",
   "downloadName": "jujitsu.movpack",
-  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
+  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
+  "icon": "packs/img/jujitsu-france-judo.webp",
+  "packId": "pack-01KY8EE8F8WKY718X9G1PB3TR6",
+  "versionEditoriale": 9
  },
  {
   "id": "jjb-gi-nogi",
@@ -79,8 +88,8 @@
   "type": "alpha",
   "statusLabel": "Alpha",
   "version": "0.2.4",
-  "updatedAt": "13 août 2026",
-  "itemCount": "150 techniques illustrées · 97 liens expliqués · 14 compositions",
+  "updatedAt": "14 août 2026",
+  "itemCount": "150 techniques · 12 familles illustrées · 97 liens expliqués · 14 compositions",
   "versionSchema": 6,
   "language": "Français",
   "maintainer": "Movenso",
@@ -93,7 +102,10 @@
   ],
   "href": "packs/jjb.movpack",
   "downloadName": "jjb.movpack",
-  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
+  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
+  "icon": "packs/img/jjb-gi-nogi.webp",
+  "packId": "pack-01KY8ERV8XKH7GSHEVEQ8KWCDX",
+  "versionEditoriale": 7
  },
  {
   "id": "taiso",
@@ -103,7 +115,7 @@
   "type": "alpha",
   "statusLabel": "Alpha",
   "version": "0.2.4",
-  "updatedAt": "13 août 2026",
+  "updatedAt": "14 août 2026",
   "itemCount": "114 techniques illustrées · 48 liens expliqués · 16 compositions",
   "versionSchema": 6,
   "language": "Français",
@@ -117,7 +129,10 @@
   ],
   "href": "packs/taiso.movpack",
   "downloadName": "taiso.movpack",
-  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
+  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
+  "icon": "packs/img/taiso.webp",
+  "packId": "pack-01KY8F8AV3R8BW9MWRS74R13FE",
+  "versionEditoriale": 7
  },
  {
   "id": "yoga-hatha",
@@ -127,7 +142,7 @@
   "type": "alpha",
   "statusLabel": "Alpha",
   "version": "0.4.4",
-  "updatedAt": "13 août 2026",
+  "updatedAt": "14 août 2026",
   "itemCount": "72 techniques illustrées · 27 liens expliqués · 12 compositions",
   "versionSchema": 6,
   "language": "Français",
@@ -141,6 +156,9 @@
   ],
   "href": "packs/yoga.movpack",
   "downloadName": "yoga.movpack",
-  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les 12 séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur."
+  "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les 12 séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
+  "icon": "packs/img/yoga-hatha.webp",
+  "packId": "pack-01KYA0SRD09M7RBCQH1Q46K1J9",
+  "versionEditoriale": 8
  }
 ]
