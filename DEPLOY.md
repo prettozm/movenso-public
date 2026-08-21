@@ -12,6 +12,16 @@ Le contrôle, dans tous les cas, est le même et se passe **après** dépôt :
 node verifier-catalogues.mjs
 ```
 
+Il ne vérifie pas seulement que les fichiers annoncés sont **présents** : il
+ouvre chaque `.movpack`, confronte son manifeste interne à l'entrée du
+catalogue (identité, version éditoriale, schéma, version de conteneur) et
+vérifie son inventaire fichier par fichier, plus l'empreinte du conteneur et
+celle de l'archive de source. Un fichier remplacé par un autre du même nom est
+donc refusé. Les empreintes (`sha256` au catalogue, `sourceSha256` dans
+`app/build.json`) sont **écrites par les outils de publication** de `movenso` —
+ne jamais les corriger à la main : si la garde les refuse, c'est le dépôt qu'il
+faut refaire.
+
 ## Publier l'application
 
 Le site distribue une application sous **GPL v3** : sa **source correspondante**

@@ -3,5 +3,6 @@
  "commit": "9373813",
  "versionSchema": 6,
  "versionMovpack": 5,
- "source": "source/movenso-source-9373813.tar.gz"
+ "source": "source/movenso-source-9373813.tar.gz",
+ "sourceSha256": "7c8caaa44165a5eb062164fd9cac347943091695fe8dde9604de7bc75acc99c1"
 }
