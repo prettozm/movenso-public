@@ -20,6 +20,7 @@
    "Kata en compositions"
   ],
   "href": "packs/judo.movpack",
+  "sha256": "c174a69425b8e373d30343ace8451483ad53d52450f869126fb4ed09c842ab53",
   "downloadName": "judo.movpack",
   "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
   "icon": "packs/img/judo-kodokan.webp",
@@ -47,6 +48,7 @@
    "Personnalisable"
   ],
   "href": "packs/karate-shotokan.movpack",
+  "sha256": "60659780fb7133362d68e7001ab06062740b6603bb300340766dd8922df36eb5",
   "downloadName": "karate-shotokan.movpack",
   "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
   "icon": "packs/img/karate-shotokan.webp",
@@ -74,6 +76,7 @@
    "Personnalisable"
   ],
   "href": "packs/jujitsu.movpack",
+  "sha256": "a4f6ee67f3a26224ee4818a59adcab4993836d879195bd543d2caea6d6b20573",
   "downloadName": "jujitsu.movpack",
   "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
   "icon": "packs/img/jujitsu-france-judo.webp",
@@ -101,6 +104,7 @@
    "14 séances"
   ],
   "href": "packs/jjb.movpack",
+  "sha256": "3c716af625e1ff08ce88283a0558007f3d25af46274e39fc8441690d5e71487b",
   "downloadName": "jjb.movpack",
   "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
   "icon": "packs/img/jjb-gi-nogi.webp",
@@ -128,6 +132,7 @@
    "Chrono"
   ],
   "href": "packs/taiso.movpack",
+  "sha256": "ea214dae9732e355401321cfb81c878c8e80a9a53f0ad8179851f85976cf3c30",
   "downloadName": "taiso.movpack",
   "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
   "icon": "packs/img/taiso.webp",
@@ -155,6 +160,7 @@
    "Chrono"
   ],
   "href": "packs/yoga.movpack",
+  "sha256": "6de7b7e578b543e5b06fb428dc4b6128a3197a12b6dffe23e30c07a9375d1477",
   "downloadName": "yoga.movpack",
   "note": "Il s'agit d'un starter pack, pour ne pas démarrer à vide. Les 12 séances sont incluses dans le pack. Cette base de travail ne constitue pas une référence officielle : elle reste à vérifier et à enrichir selon vos besoins et votre apprentissage. Elle ne remplace pas l'enseignement d'un professeur.",
   "icon": "packs/img/yoga-hatha.webp",
